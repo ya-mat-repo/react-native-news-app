@@ -8,7 +8,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const ClipButton = ({ onPress, enabled }) => {
+type Props = {
+  onPress: () => void;
+  enabled: boolean;
+};
+
+const ClipButton = ({ onPress, enabled }: Props) => {
   const name = enabled ? 'bookmark' : 'bookmark-o';
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
