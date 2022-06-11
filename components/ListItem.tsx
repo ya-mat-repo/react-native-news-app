@@ -1,37 +1,6 @@
 import React, { VFC } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
-type Props = {
-  title: string;
-  imageUrl: string;
-  author: string;
-  onPress: () => void;
-};
-
-const ListItem: VFC<Props> = ({ title, imageUrl, author, onPress }) => {
-  return (
-    <TouchableOpacity style={styles.itemContainer} onPress={onPress}>
-      <View style={styles.leftContainer}>
-        {!!imageUrl && (
-          <Image
-            style={styles.tinyLogo}
-            source={{
-              uri: imageUrl,
-            }}
-          />
-        )}
-      </View>
-      <View style={styles.rightContainer}>
-        <Text numberOfLines={3} style={styles.text}>
-          {title}
-        </Text>
-        <Text style={styles.subText}>{author}</Text>
-      </View>
-    </TouchableOpacity>
-  );
-};
-export default ListItem;
-
 const styles = StyleSheet.create({
   itemContainer: {
     height: 100,
@@ -60,3 +29,33 @@ const styles = StyleSheet.create({
     color: 'gray',
   },
 });
+
+type Props = {
+  title: string;
+  imageUrl: string;
+  author: string;
+  onPress: () => void;
+};
+
+export const ListItem: VFC<Props> = ({ title, imageUrl, author, onPress }) => {
+  return (
+    <TouchableOpacity style={styles.itemContainer} onPress={onPress}>
+      <View style={styles.leftContainer}>
+        {!!imageUrl && (
+          <Image
+            style={styles.tinyLogo}
+            source={{
+              uri: imageUrl,
+            }}
+          />
+        )}
+      </View>
+      <View style={styles.rightContainer}>
+        <Text numberOfLines={3} style={styles.text}>
+          {title}
+        </Text>
+        <Text style={styles.subText}>{author}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
