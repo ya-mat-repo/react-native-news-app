@@ -47,7 +47,7 @@ export const ArticleScreen: React.FC<Props> = ({
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={Styles.container}>
       <ClipButton onPress={toggleClip} enabled={isClipped()} />
       <WebView
         source={{ uri: article.url }}

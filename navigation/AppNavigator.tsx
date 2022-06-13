@@ -35,7 +35,11 @@ const ClipStack = () => {
   );
 };
 
-const screenOption = ({ route }): BottomTabNavigationOptions => ({
+const screenOption = ({
+  route,
+}: {
+  route: any;
+}): BottomTabNavigationOptions => ({
   tabBarIcon: ({ color, size }: { color: string; size: number }) => {
     let iconName;
 
